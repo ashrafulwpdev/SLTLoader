@@ -1,6 +1,5 @@
 plugins {
-    alias(libs.plugins.android.library)
-    id 'maven-publish'
+    alias(libs.plugins.android.library) // Only Android plugin
 }
 
 android {
@@ -11,13 +10,14 @@ android {
         minSdk 25
         targetSdk 35
         versionCode 1
-        versionName "1.0.2"
+        versionName "1.0.3" // Must exactly match your Git tag (v1.0.3)
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                         'proguard-rules.pro'
         }
     }
 
@@ -25,20 +25,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+    
+    // Add this to prevent merge conflicts
+    packagingOptions {
+        exclude("META-INF/*")
+    }
 }
 
 dependencies {
     implementation libs.lottie
     implementation libs.appcompat
-}
-
-group = 'com.github.ashrafulwpdev'
-version = '1.0.2'
-
-publishing {
-    publications {
-        release(MavenPublication) {
-            from components.release
-        }
-    }
 }
