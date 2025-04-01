@@ -10,7 +10,7 @@ android {
         minSdk 25
         targetSdk 35
         versionCode 1
-        versionName "1.0.5"
+        versionName "1.0.1"
     }
 
     buildTypes {
@@ -33,4 +33,4 @@ dependencies {
 
 // Define group and version for JitPack
 group = 'com.github.ashrafulwpdev'
-version = '1.0.5'
+version = '1.0.1'
