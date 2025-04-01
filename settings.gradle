@@ -21,6 +21,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SoftLottieLoaderExample"
+rootProject.name = "SLTLoader"
 include ':app'
 include ':slt'

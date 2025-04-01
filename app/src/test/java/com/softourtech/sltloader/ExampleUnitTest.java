@@ -1,4 +1,4 @@
-package com.softourtech.softlottieloaderexample;
+package com.softourtech.sltloader;
 
 import org.junit.Test;
 
