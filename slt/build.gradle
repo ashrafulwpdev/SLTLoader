@@ -1,16 +1,17 @@
 plugins {
-    alias(libs.plugins.android.library) // Only Android plugin
+    id 'com.android.library'
+    id 'maven-publish'  // Required for JitPack
 }
 
 android {
     namespace 'com.softourtech.slt'
-    compileSdk 35
+    compileSdk 34
 
     defaultConfig {
-        minSdk 25
-        targetSdk 35
+        minSdk 24
+        targetSdk 34
         versionCode 1
-        versionName "1.0.3" // Must exactly match your Git tag (v1.0.3)
+        versionName "1.0.3"  // Must match your Git tag
     }
 
     buildTypes {
@@ -25,14 +26,22 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-    
-    // Add this to prevent merge conflicts
-    packagingOptions {
-        exclude("META-INF/*")
-    }
 }
 
 dependencies {
-    implementation libs.lottie
-    implementation libs.appcompat
+    implementation 'com.airbnb.android:lottie:6.1.0'  // Use direct dependency
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.ashrafulwpdev'
+                artifactId = 'SLTLoader'
+                version = '1.0.3'
+            }
+        }
+    }
 }
