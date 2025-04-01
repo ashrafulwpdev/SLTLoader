@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="70dp"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SLTLoader Demo"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#212121"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp"/>
+
+        <!-- Scrollable Button Container -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Default Loader Button -->
+                <Button
+                    android:id="@+id/button_default_loader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Default Loader"
+                    android:textSize="16sp"
+                    android:backgroundTint="#808080"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:textColor="#FFFFFF"/>
+
+                <!-- Custom Config Loader Button -->
+                <Button
+                    android:id="@+id/button_custom_config_loader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Custom Config Loader"
+                    android:textSize="16sp"
+                    android:backgroundTint="#808080"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:textColor="#FFFFFF"/>
+
+                <!-- Custom Params Loader Button -->
+                <Button
+                    android:id="@+id/button_custom_params_loader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Custom Params Loader"
+                    android:textSize="16sp"
+                    android:backgroundTint="#808080"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:textColor="#FFFFFF"/>
+
+                <!-- Inside Button Loader Trigger -->
+                <Button
+                    android:id="@+id/button_inside_loader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show Loader Inside Button"
+                    android:textSize="16sp"
+                    android:backgroundTint="#808080"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:textColor="#FFFFFF"/>
+
+                <!-- Inside Button Container -->
+                <FrameLayout
+                    android:id="@+id/inside_button_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp">
+
+                    <Button
+                        android:id="@+id/button_inside"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Inside Loader"
+                        android:textSize="16sp"
+                        android:backgroundTint="#808080"
+                        android:padding="12dp"
+                        android:textColor="#FFFFFF"/>
+                </FrameLayout>
+
+                <!-- Hide Loader Button -->
+                <Button
+                    android:id="@+id/button_hide_loader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hide Loader"
+                    android:textSize="16sp"
+                    android:backgroundTint="#808080"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:textColor="#FFFFFF"/>
+
+                <!-- Footer (Moved) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Built with SLTLoader v1.0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#757575"
+                    android:layout_gravity="center"
+                    android:paddingTop="8dp"
+                    android:layout_marginTop="16dp"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</FrameLayout>
