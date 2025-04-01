@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
+    id 'maven-publish'
 }
 
 android {
@@ -10,7 +11,7 @@ android {
         minSdk 25
         targetSdk 35
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.2"  // Optional: Update this to "1.0.2" too
     }
 
     buildTypes {
@@ -28,9 +29,16 @@ android {
 
 dependencies {
     implementation libs.lottie
-    implementation "androidx.appcompat:appcompat:1.7.0"
+    implementation libs.appcompat
 }
 
-// Define group and version for JitPack
 group = 'com.github.ashrafulwpdev'
-version = '1.0.0'
+version = '1.0.2'  // Updated from 1.0.0 to 1.0.2
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            from components.release
+        }
+    }
+}
