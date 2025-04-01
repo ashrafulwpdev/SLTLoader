@@ -11,7 +11,7 @@ android {
         minSdk 25
         targetSdk 35
         versionCode 1
-        versionName "1.0.2"  // Optional: Update this to "1.0.2" too
+        versionName "1.0.2"
     }
 
     buildTypes {
@@ -33,7 +33,7 @@ dependencies {
 }
 
 group = 'com.github.ashrafulwpdev'
-version = '1.0.2'  // Updated from 1.0.0 to 1.0.2
+version = '1.0.2'
 
 publishing {
     publications {
